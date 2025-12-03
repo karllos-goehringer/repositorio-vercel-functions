@@ -29,7 +29,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ id, name }) => {
   }
 
   return (
-    <div className="border rounded-lg p-4 bg-white shadow-md flex flex-col items-center">
+    <div className="border rounded-lg p-4 bg-red-200 shadow-md flex flex-col items-center">
       <img
         src={details.sprites.front_default}
         alt={name}

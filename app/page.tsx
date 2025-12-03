@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react"
 import PokemonCard from "./pokecard";
 
-// 1. Interface Corrigida para refletir a estrutura da PokeAPI
 interface PokemonSpecies {
   name: string;
   url: string;
@@ -57,15 +56,21 @@ export default function ProductsPage() {
   const entries = pokedexData?.pokemon_entries || [];
 
   return (
-    <main className="p-8">
-      {/* Exibe a geração atualizada */}
-      <h1 className="text-3xl font-bold mb-8">Pokémons da Geração {geracaoPokemon.toUpperCase()}</h1>
-      
-      {/* Atualiza o estado da geração ao trocar a opção */}
+    <main className="p-8 bg-red-100 min-h-screen">
+      <div className="flex flex-row justify-center items-center mb-8">
+    <img 
+        src={'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/1026px-Pok%C3%A9_Ball_icon.svg.png'} 
+        alt="Pokemon Logo" 
+        className="w-16 mr-4" // Adicionado 'mr-4' para espaçamento à direita da imagem
+    />
+    <h1 className="text-3xl font-bold">
+        Pokémons da Geração {geracaoPokemon.toUpperCase()}
+    </h1>
+</div>
       <select
-        value={geracaoPokemon} // Controla o select pelo estado
+        value={geracaoPokemon} 
         onChange={(e) => {
-          setGeracaoPokemon(e.target.value); // Usa o setter do estado
+          setGeracaoPokemon(e.target.value); 
         }}
       >
         <option value="kanto">Kanto</option>
@@ -79,9 +84,9 @@ export default function ProductsPage() {
         <option value="paldea">Paldea</option>
       </select>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 ">
         {entries.map((entry) => (
-          <div key={entry.entry_number} className="border rounded-lg p-4 bg-white shadow-md">
+          <div key={entry.entry_number} className="border rounded-lg p-4 bg-red-500 shadow-md ">
             <PokemonCard id={parseInt(entry.pokemon_species.url.split('/').slice(-2, -1)[0])} name={entry.pokemon_species.name} />
           </div>
         ))}
