@@ -1,6 +1,0 @@
-{
-  "version": 3,
-  "sources": [],
-  "sections": [
-    {"offset": {"line": 40, "column": 0}, "map": {"version":3,"sources":["file:///home/anderson/Downloads/projeto/minimal-example-app/app/api/products/route.ts"],"sourcesContent":["export async function GET(request: Request) {\n  const response = await fetch(\"https://api.vercel.app/products\")\n  const products = await response.json()\n  return Response.json(products)\n}\n"],"names":[],"mappings":";;;;AAAO,eAAe,IAAI,OAAgB;IACxC,MAAM,WAAW,MAAM,MAAM;IAC7B,MAAM,WAAW,MAAM,SAAS,IAAI;IACpC,OAAO,SAAS,IAAI,CAAC;AACvB"}}]
-}
